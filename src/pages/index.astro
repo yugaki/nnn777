@@ -2,8 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 
-import { newtClient } from '../lib/newt'
-import type { Article } from '../lib/newt'
+import { newtClient } from '../lib/newt';
+import type { Article } from '../lib/newt';
 
 const { items: articles } = await newtClient.getContents<Article>({
   appUid: 'blog',
@@ -23,8 +23,7 @@ const { items: articles } = await newtClient.getContents<Article>({
 			articles.map((article) => {
 				return (
 					<li>
-						<a href={`/articles/${article.slug}`}>
-
+						<a href={"/articles/${article.slug}"}>
 							<img src={article.coverImage.src} alt="">
 							<h1>{article.title}</h1>
 					
