@@ -1,0 +1,26 @@
+---
+import { newtClient } from '../lib/newt';
+import type { Article } from '../lib/newt';
+const { items: articles } = await newtClient.getContents<Article>({
+  appUid: 'blog',
+  modelUid: 'article',
+  query: {
+    select: ['title', 'slug', 'body','coverImage'],
+  },
+})
+---
+<ul>
+  {
+    articles.map((article) => {
+      return (
+        <li>
+          <a href={"/articles/${article.slug}"}>
+            <img src={article.coverImage.src} alt="">
+            <h1>{article.title}</h1>
+        
+            </a>
+        </li>
+      )
+    })
+  }
+</ul>
