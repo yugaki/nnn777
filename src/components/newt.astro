@@ -8,14 +8,17 @@ const { items: articles } = await newtClient.getContents<Article>({
     select: ['title', 'slug', 'body','coverImage'],
   },
 })
+
+
 ---
 <ul>
   {
     articles.map((article) => {
       return (
         <li>
-          <a href={"/articles/${article.slug}"}>
+          <a href={`/articles/${article.slug}`}>
             <img src={article.coverImage.src} alt="">
+            <p>{article.slug}</p>
             <h1>{article.title}</h1>
         
             </a>
@@ -24,3 +27,11 @@ const { items: articles } = await newtClient.getContents<Article>({
     })
   }
 </ul>
+
+<style lang="scss">
+  ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+</style>
