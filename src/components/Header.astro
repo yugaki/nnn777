@@ -1,11 +1,40 @@
 <header>
-  <div class="">
-    <h1 class=""></h1>
+  <div class="box">
+    <h1 class="">
+      <a href="/">
+        <img src="dist/assets/img/Logo.svg" alt="SHIJYOKAI">
+      </a>
+    </h1>
     <nav class="">
       <ul class="">
-        <li class="">WORKS</li>
-        <li class="">ABOUT</li>
+        <li class="menuFont"><a href="#">ABOUT</a></li>
+        <li class="menuFont"><a href="#">WORKS</a></li>
+        <li class="menuFont"><a href="#">WORKS</a></li>
+        <li class="menuFont"><a href="#">WORKS</a></li>
       </ul>
     </nav>
   </div>
 </header>
+
+<style lang="scss">
+  header{
+    padding: 40px;
+    h1{
+      width: 150px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .box{
+      display: flex;
+      position: relative;
+      justify-content: center;
+    }
+    ul{
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+</style>

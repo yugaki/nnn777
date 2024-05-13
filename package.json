@@ -13,6 +13,7 @@
     "@astrojs/check": "^0.5.10",
     "@astrojs/tailwind": "^5.1.0",
     "astro": "^4.6.2",
+    "gsap": "^3.12.5",
     "newt-client-js": "^3.3.2",
     "sass": "^1.77.0",
     "scss": "^0.2.4",
