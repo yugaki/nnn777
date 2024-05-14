@@ -1,8 +1,13 @@
+---
+import { Image } from "astro:assets"
+import unko from "../assets/img/Logo.svg"
+---
 <header>
   <div class="box">
     <h1 class="">
       <a href="/">
-        <img src="/assets/img/Logo.svg" alt="SHIJYOKAI">
+      
+        <Image src={unko} alt="unko"></Image>
       </a>
     </h1>
     <nav class="">
@@ -22,7 +27,10 @@
     h1{
       width: 150px;
       position: absolute;
-      top: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
       left: 0;
     }
     .box{

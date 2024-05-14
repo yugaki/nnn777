@@ -5,8 +5,11 @@ export interface Article {
   slug: string
   body: string
   coverImage: {
-    src: string
-  }
+    src: string,
+    width: number,
+    height: number
+  },
+
 }
 
 
