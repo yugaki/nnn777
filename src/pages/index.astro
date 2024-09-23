@@ -1,27 +1,37 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
+import Top from '../components/Top.astro';
+import About from '../components/About.astro';
 import Plarax from '../components/Plarax.astro';
-import EaseOut from '../components/EaseOut.astro';
-import Newt from '../components/newt.astro';
+import Schedule from '../components/Schedule.astro';
+import Event from '../components/Event.astro';
+import Count from '../components/Count.astro';
+import Footer from '../components/Footer.astro';
+// import EaseOut from '../components/EaseOut.astro';
+// import Newt from '../components/newt.astro';
 import '../components/style.astro';
 ---
 
-<Layout title="四条会！">
+<Layout title="シャインリョコウ2024">
 	<Header></Header>
-
-	<p>hellow yugaki!</p>
-	<!-- <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Click me</button> -->
-	<Plarax></Plarax>
-	<EaseOut></EaseOut>
-
-
+	<Top></Top>
+	<div class="ove">
+		<About></About>
+		<Plarax></Plarax>
+	</div>
+	<Schedule></Schedule>
+	<Event></Event>
+	<Count></Count>
+	<Footer></Footer>
+	<!-- <EaseOut></EaseOut> -->
 	<!-- <Newt></Newt> -->
 </Layout>
 <style lang="scss">
-
+	.ove{
+		overflow: hidden;
+	}
 </style>
-
 <script>
 
 </script>

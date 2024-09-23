@@ -1,0 +1,126 @@
+---
+import { Image } from "astro:assets"
+import deco from "../assets/img/top_deco.svg"
+import logo from "../assets/img/Logo.svg"
+import main01 from "../assets/img/main01.png"
+import main02 from "../assets/img/main02.png"
+---
+<div class="load">
+  <div class="load__logo">
+    <Image src={logo} alt="deco"></Image>
+  </div>
+</div>
+<div class="top">
+  <div class="top__box">
+    <div class="top__slider">
+      <div class="mySwiper swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <Image src={main02} alt="slide 1"></Image>
+          </div>
+          <div class="swiper-slide">
+            <Image src={main01} alt="slide 2"></Image>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="lottie" id="logo"></div>
+    <div class="top__logo">
+      <Image src={logo} alt="deco"></Image>
+    </div>
+  </div>
+  <div class="top__deco">
+    <Image src={deco} alt="deco"></Image>
+  </div>
+</div>
+
+<style lang="scss">
+  .load{
+    opacity: 1; /* 初期状態では表示されている */
+    transition: opacity 1s; /* フェードアウト用のトランジションを設定 */
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    z-index: 1000000;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__logo{
+      max-width: 540px;
+      width: 40%;
+    }
+  }
+  .top{
+    position: relative;
+    &__box{
+      position: relative;
+    }
+    &__deco{
+      position: absolute;
+      bottom: -1px;
+      width: 100%;
+      z-index: 1000;
+    }
+    &__logo{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 540px;
+      width: 35%;
+      z-index: 1000;
+    }
+  }
+  .lottie {
+    width: 100%;
+    z-index: 900;
+    top: 0;
+    opacity: 0.7;
+    position: absolute;
+  }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.9/lottie.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    function end_loader() {
+      const loader = document.querySelector('.load');
+      loader.style.transition = 'opacity 1s'; // フェードアウトの時間を1秒に設定
+      loader.style.opacity = '0'; // フェードアウト開始
+
+      setTimeout(function () {
+        loader.style.display = 'none'; // 完全に透明になったら非表示に
+      }, 1000); // 1秒後（フェードアウトが完了したら）に非表示に
+    }
+
+    window.addEventListener('load', function () {
+      setTimeout(end_loader, 2000); // 3秒後にローディングを終了
+    });
+  });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const swiper = new Swiper('.mySwiper', {
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    loop: true,
+  });
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const logoAnimation = lottie.loadAnimation({
+    container: document.getElementById('logo'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: 'src/assets/json/data.json',
+  });
+});
+</script>

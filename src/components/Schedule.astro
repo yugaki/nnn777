@@ -1,0 +1,308 @@
+---
+import { Image } from "astro:assets"
+import item01 from "../assets/img/sch/sch01.png"
+---
+
+<section class="sch" id="sec02">
+  <div class="titleBox">
+    <h2 class="tit_h2">スケジュール</h2>
+  </div>
+  <div class="horizontal-wrapper">
+    <div class="innerSch">
+      <ul>
+        <li class="timeBox">
+          <div class="timeBoxTime">
+            <span class="time">AM</span>
+            <h3 class="num">9:10</h3>
+          </div>
+          <div class="timeBoxTxt">
+            京都駅集合
+          </div>
+          <div class="timeBoxImg">
+            <Image src={item01} alt="deco"></Image>
+          </div>
+        </li>
+        <li class="line">
+          <p class="line_txt">電車<br>1h38min</p>
+        </li>
+        <li class="timeBox">
+          <div class="timeBoxTime">
+            <span class="time">AM</span>
+            <h3 class="num">10:48</h3>
+          </div>
+          <div class="timeBoxTxt">
+            信楽駅に到着
+          </div>
+          <div class="timeBoxImg">
+            <Image src={item01} alt="deco"></Image>
+          </div>
+        </li>
+        <li class="line">
+          <p class="line_txt">徒歩<br>2min</p>
+        </li>
+        <li class="timeBox">
+          <div class="timeBoxTime">
+            <span class="time">AM</span>
+            <h3 class="num">11:00</h3>
+          </div>
+          <div class="timeBoxTxt">
+            信楽焼ミュージアム
+          </div>
+          <div class="timeBoxImg">
+            <Image src={item01} alt="deco"></Image>
+          </div>
+        </li>
+        <li class="line">
+          <p class="line_txt">徒歩<br>3min</p>
+        </li>
+        <li class="timeBox">
+          <div class="timeBoxTime">
+            <span class="time">AM</span>
+            <h3 class="num">11:30</h3>
+          </div>
+          <div class="timeBoxTxt">
+            一水庵 でランチ
+          </div>
+          <div class="timeBoxImg">
+            <Image src={item01} alt="deco"></Image>
+          </div>
+        </li>
+        <li class="line">
+          <p class="line_txt">タクシー<br>5min</p>
+        </li>
+        <li class="timeBox">
+          <div class="timeBoxTime">
+            <span class="time">PM</span>
+            <h3 class="num">0:50</h3>
+          </div>
+          <div class="timeBoxTxt">
+            大小屋 に到着
+          </div>
+          <div class="timeBoxImg">
+            <Image src={item01} alt="deco"></Image>
+          </div>
+        </li>
+        <li class="line">
+          <p class="line_txt">チーム行動へ</p>
+        </li>
+        <li class="timeBox">
+          <div class="timeBoxTime">
+            <span class="time">PM</span>
+            <h3 class="num">1:00</h3>
+          </div>
+          <div class="timeBoxTxt">
+            Aチーム体験開始<br>Bチーム散策
+          </div>
+          <div class="timeBoxImg">
+            <Image src={item01} alt="deco"></Image>
+          </div>
+        </li>
+        <li class="line">
+          <p class="line_txt">チーム交代</p>
+        </li>
+        <li class="timeBox">
+          <div class="timeBoxTime">
+            <span class="time">PM</span>
+            <h3 class="num">2:00</h3>
+          </div>
+          <div class="timeBoxTxt">
+            Bチーム体験開始<br>Aチーム散策
+          </div>
+          <div class="timeBoxImg">
+            <Image src={item01} alt="deco"></Image>
+          </div>
+        </li>
+        <li class="line">
+          <p class="line_txt">体験終了</p>
+        </li>
+        <li class="timeBox">
+          <div class="timeBoxTime">
+            <span class="time">PM</span>
+            <h3 class="num">3:00</h3>
+          </div>
+          <div class="timeBoxTxt">
+            全体験終了<br>散策しつつ写真撮影など
+          </div>
+          <div class="timeBoxImg">
+            <Image src={item01} alt="deco"></Image>
+          </div>
+        </li>
+        <li class="line">
+          <p class="line_txt">散策散歩<br>30min</p>
+        </li>
+        <li class="timeBox">
+          <div class="timeBoxTime">
+            <span class="time">PM</span>
+            <h3 class="num">3:30</h3>
+          </div>
+          <div class="timeBoxTxt">
+            登り窯カフェへ<br>まったりタイム
+          </div>
+          <div class="timeBoxImg">
+            <Image src={item01} alt="deco"></Image>
+          </div>
+        </li>
+        <li class="line">
+          <p class="line_txt">徒歩<br>10min</p>
+        </li>
+        <li class="timeBox">
+          <div class="timeBoxTime">
+            <span class="time">PM</span>
+            <h3 class="num">5:06</h3>
+          </div>
+          <div class="timeBoxTxt">
+            電車で帰京
+          </div>
+          <div class="timeBoxImg">
+            <Image src={item01} alt="deco"></Image>
+          </div>
+        </li>
+        <li class="line">
+          <p class="line_txt">電車<br>1h38min</p>
+        </li>
+        <li class="timeBox">
+          <div class="timeBoxTime">
+            <span class="time">PM</span>
+            <h3 class="num">6:27</h3>
+          </div>
+          <div class="timeBoxTxt">
+            お帰りなさい。<br>お疲れ様でした〜。
+          </div>
+          <div class="timeBoxImg">
+            <Image src={item01} alt="deco"></Image>
+          </div>
+        </li>
+        <li class="timeBox --opa0">
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  .sch{
+    // padding-top: 240px;
+    // padding-bottom: 200px;
+    overflow: hidden; /* 横スクロール時に余計な部分が見えないようにする */
+    height: 100vh;
+  }
+  .horizontal-wrapper {
+    width: 100vw;
+    overflow: hidden; /* 横スクロールを隠す */
+  }
+  .titleBox{
+  max-width: 1120px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 500;
+  padding: 0 40px;
+  padding-top: 160px;
+  }
+  .innerSch {
+  max-width: 1120px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 500;
+  padding: 0 40px;
+  width: 500%; /* 横方向に広げる幅を調整 */
+  }
+  .absol{
+    position: absolute;
+    top: 50%;
+  }
+  ul{
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+  }
+  .timeBox, .line {
+    flex-shrink: 0;
+  }
+  .timeBox{
+    border-radius: 16px;
+    border: 2px solid var(--mian01, #00D1B5);
+    padding: 24px;
+    width: 448px;
+    &.--opa0{
+      margin-right: 800px;
+      opacity: 0;
+    }
+    &Time{
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      .time{
+        color: var(--Wt, #FFF);
+        font-family: "Zen Kaku Gothic New";
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 100%; /* 13px */
+        letter-spacing: 0.65px;
+        padding: 1px 8px 3px 8px;
+        display: grid;
+        place-items: center;
+        border-radius: 50px;
+        background: var(--mian01, #00D1B5);
+      }
+      .num{
+        font-family: "Zen Kaku Gothic New";
+        font-size: 30px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 120%; /* 36px */
+        letter-spacing: 1.5px;
+      }
+    }
+    &Txt{
+      margin-top: 16px;
+      margin-bottom: 16px;
+      height: 40px;
+      font-family: "Zen Kaku Gothic New";
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 120%; /* 19.2px */
+      letter-spacing: 0.8px;
+    }
+    &Img{
+      overflow: hidden;
+      border-radius: 8px;
+    }
+  }
+  .line{
+    width: 180px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #00D1B5;
+    &_txt{
+      text-align: center;
+      font-family: "Zen Kaku Gothic New";
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 120%; /* 19.2px */
+      letter-spacing: 0.8px;
+    }
+  }
+</style>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+
+  const container = document.querySelector(".horizontal-wrapper");
+  const scrollWidth = container.scrollWidth - window.innerWidth;
+
+  gsap.to(".innerSch", {
+    x: -scrollWidth, // 横方向のスクロール距離を指定
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".sch",
+      pin: true, // セクションをピン留め
+      scrub: true, // スクロールに連動
+      end: () => "+=" + scrollWidth // コンテンツの横幅に応じて終了位置を設定
+    }
+  });
+</script>
+

@@ -1,0 +1,158 @@
+---
+import { Image } from "astro:assets"
+import item01 from "../assets/img/about/about01.png"
+import item02 from "../assets/img/about/about02.png"
+---
+
+<section class="about" id="sec01">
+  <div class="inner">
+    <h2 class="tit_h2">ごあいさつ</h2>
+    <p class="txt"><br>みなさま、毎日の業務お疲れさまです。<br>みなさまの日々のがんばりによって、<br>こうして今年も社員旅行を決行することができました。<br>今年の目的地は<span class="big">「滋賀県の信楽」</span>です！<br>たくさんお仕事をがんばっているみなさまにとって、<br>少しでもこの旅行が癒しになればと、幹事一同心より願っております。<br>みなさまに楽しんでいただけると嬉しいです。
+    </p>
+  </div>
+  <div class="lottie" id="lott"></div>
+  <div class="item --no1" data-speed="0.1">
+    <Image src={item01} alt="deco"></Image>
+  </div>
+  <div class="item --no2" data-speed="0.2">
+    <Image src={item02} alt="deco"></Image>
+  </div>
+  <div class="item --no3" data-speed="0.4">
+    <Image src={item01} alt="deco"></Image>
+  </div>
+  <div class="item --no4" data-speed="0.1" data-direction="reverse">
+    <Image src={item01} alt="deco"></Image>
+  </div>
+  <div class="item --no5" data-speed="0.2" >
+    <Image src={item02} alt="deco"></Image>
+  </div>
+  <div class="item --no6" data-speed="0.1" data-direction="reverse">
+    <Image src={item02} alt="deco"></Image>
+  </div>
+  <div class="item --no7" data-speed="0.1">
+    <Image src={item01} alt="deco"></Image>
+  </div>
+</section>
+
+
+<style lang="scss">
+  .about{
+    position: relative;
+    padding-top: 160px;
+    padding-bottom: 800px;
+    // overflow-x: hidden;
+  }
+  .inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 500;
+    padding: 0 40px;
+  }
+  .txt{
+    font-family: "Zen Kaku Gothic New";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 270%; /* 40.5px */
+    letter-spacing: 0.75px;
+  }
+  .big{
+    font-weight: 700;
+    color: var(--mian01, #00D1B5);
+  }
+  .lottie {
+    width: 100%;
+    z-index: 10;
+    top: 0;
+    opacity: 0.3;
+    position: absolute;
+  }
+  .item{
+    border-radius: 8px;
+    overflow: hidden;
+    position: absolute;
+    transition: transform 0.1s ease-out;
+    &.--no1{
+      right: 25%;
+      // top: 450px;
+      top: 230px;
+      width: 400px;
+      z-index: 20;
+    }
+    &.--no2{
+      right: 8%;
+      // top: 140px;
+      top: 80px;
+      width: 300px;
+      z-index: 19;
+    }
+    &.--no3{
+      left: 5%;
+      // top: 575px;
+      top: 350px;
+      width: 450px;
+      z-index: 20;
+    }
+    &.--no4{
+      right: 35%;
+      // top: 810px;
+      top: 860px;
+      width: 300px;
+      z-index: 23;
+    }
+    &.--no5{
+      right: 50%;
+      // top: 930px;
+      top: 660px;
+      width: 280px;
+      z-index: 22;
+    }
+    &.--no6{
+      right: -7%;
+      // top: 680px;
+      top: 1000px;
+      width: 400px;
+      z-index: 26;
+    }
+    &.--no7{
+      left: -5%;
+      // top: 1050px;
+      top: 800px;
+      width: 400px;
+      z-index: 19;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const logoAnimation = lottie.loadAnimation({
+      container: document.getElementById('lott'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: 'src/assets/json/data.json',
+    });
+  });
+  logoAnimation.setSpeed(0.6);
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const items = document.querySelectorAll('.item');
+
+    // スクロールイベントをリッスンして逆方向のパララックス効果を適用
+    window.addEventListener('scroll', function () {
+      const scrollTop = window.pageYOffset;
+
+      items.forEach(item => {
+        const speed = parseFloat(item.getAttribute('data-speed')) || 0.2; // data-speedを取得、デフォルト値は0.2
+        const direction = item.getAttribute('data-direction') === 'reverse' ? -1 : 1; // 逆方向の指定があれば-1、なければ1
+        const offset = scrollTop * speed * direction;
+        item.style.transform = `translateY(${offset}px)`; // Y軸方向に移動
+      });
+    });
+  });
+</script>
+

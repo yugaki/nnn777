@@ -5,89 +5,23 @@ import palarax from "../assets/img/paralax01.png"
 
 
 <div class="main-visual js-trigger">
-  <Image src={palarax} alt="unko" class="js-animation-section"></Image>
+  <Image src={palarax} alt="unko" class="js-animation-section imgs"></Image>
 </div>
-<section class="main-content">
-  <section class="title">
-    <h2>スクロールに応じて、<br />画像がふわっと拡大する</h2>
-    <p>
-      こういう画像がふわっと拡大するサイト、<br
-      />格好いいなあと思って作ってみました
-    </p>
-    <p>
-      <a
-        href="https://github.com/thetalemon/manasas-ui-sandbox/blob/main/src/pages/expand.astro"
-        target="_blank"
-        rel="me">Github</a
-      >
-    </p>
-  </section>
-  <section>
-    <h2>利用しているもの</h2>
-    <ul>
-      <li>
-        <a href="https://greensock.com/gsap/" target="_blank">GSAP</a
-        >(ScrollTrigger)
-      </li>
-      <li>
-        <a href="https://unsplash.com/developers" target="_blank"
-          >Unsplash Image API
-        </a>
-      </li>
-    </ul>
-  </section>
-  <section>
-    <h2>似た表現のあるサイト</h2>
-    <ul>
-      <li>
-        <a href="https://www.uv0.jp/" target="_blank"
-          >完全遮光日傘 UVO［ウーボ］公式｜最強の日傘</a
-        >
-      </li>
-    </ul>
-  </section>
-  <section>
-    <h2>実装参考サイト</h2>
-    <ul>
-      <li>
-        <a href="https://yumegori.com/gsap-scrolltrigger" target="_blank"
-          >GSAPのScrollTrigger.jsを使ったスクロールアニメーションを実装する方法
-          | 夢みるゴリラ</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://greensock.com/docs/v3/Plugins/ScrollTrigger"
-          target="_blank"
-        >
-          GreenSock | Docs | Plugins | ScrollTrigger
-        </a>
-      </li>
-    </ul>
-  </section>
-</section>
 
 
 <style lang="scss">
-  h2 {
-    margin-bottom: 0.5rem;
-  }
   .main-visual {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    position: relative;
+    overflow: hidden;
     .main-image {
-      object-fit: cover;
-      object-position: 50% 50%;
-    }
-  }
-  .main-content {
-    color: white;
-    padding: 0 8px;
-
-    section {
-      padding: 8px 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; 
+      object-position: 50% 50%; 
     }
   }
 </style>
@@ -100,20 +34,15 @@ import palarax from "../assets/img/paralax01.png"
   gsap.fromTo(
     ".js-animation-section",
     {
-      width: "25%",
-      height: "25%",
-      // borderRadius: "50% 50% 50% 50%",
+      scale: 0.3, // 初期サイズ (100%)
     },
     {
-      width: "100%",
-      height: "100%",
-      borderRadius: "0%",
+      scale: 1, // 拡大サイズ (150%)
       scrollTrigger: {
         trigger: ".js-trigger",
         start: "center center",
         scrub: true,
         pin: true,
-        // markers: true,
       },
     },
   );

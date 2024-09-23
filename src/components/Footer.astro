@@ -1,0 +1,51 @@
+---
+import { Image } from "astro:assets"
+import unko from "../assets/img/Logo.svg"
+// import fTimg from "../assets/img/footer.png"
+---
+<div class="ftImg js-parallax">
+  <!-- <Image src={fTimg} alt=""></Image> -->
+</div>
+<footer>
+  <div class="foot">
+    <Image src={unko} alt="Logo"></Image>
+  </div>
+</footer>
+
+<style lang="scss">
+  .ftImg{
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    background-image: url(src/assets/img/footer.png); /* 背景画像として設定 */
+    background-size: cover; /* 画像を全体に表示 */
+    background-position: center center; /* 初期位置を設定 */
+  }
+  footer{
+    padding: 40px;
+    background: #fff;
+    display: grid;
+    place-items: center;
+    width: 100%;
+  }
+  .foot{
+    width: 200px;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const parallaxElement = document.querySelector('.js-parallax');
+    
+    window.addEventListener('scroll', function() {
+      const scrollTop = window.pageYOffset;
+      const elementOffset = parallaxElement.offsetTop;
+      const distance = scrollTop - elementOffset;
+      
+      // スクロールに応じて背景画像を上下に動かす
+      if (distance >= 0) {
+        parallaxElement.style.backgroundPositionY = `${distance * 0.8}px`; // 0.5は速度調整
+      }
+    });
+  });
+</script>
