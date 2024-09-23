@@ -292,17 +292,24 @@ import item01 from "../assets/img/sch/sch01.png"
   gsap.registerPlugin(ScrollTrigger);
 
   const container = document.querySelector(".horizontal-wrapper");
-  const scrollWidth = container.scrollWidth - window.innerWidth;
 
-  gsap.to(".innerSch", {
-    x: -scrollWidth, // 横方向のスクロール距離を指定
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".sch",
-      pin: true, // セクションをピン留め
-      scrub: true, // スクロールに連動
-      end: () => "+=" + scrollWidth // コンテンツの横幅に応じて終了位置を設定
-    }
-  });
+  // container が存在するかチェック
+  if (container) {
+    const scrollWidth = container.scrollWidth - window.innerWidth;
+
+    gsap.to(".innerSch", {
+      x: -scrollWidth, // 横方向のスクロール距離を指定
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".sch",
+        pin: true, // セクションをピン留め
+        scrub: true, // スクロールに連動
+        end: () => "+=" + scrollWidth // コンテンツの横幅に応じて終了位置を設定
+      }
+    });
+  } else {
+    console.error('Container element ".horizontal-wrapper" not found.');
+  }
 </script>
+
 

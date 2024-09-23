@@ -4,6 +4,7 @@ import deco from "../assets/img/top_deco.svg"
 import logo from "../assets/img/Logo.svg"
 import main01 from "../assets/img/main01.png"
 import main02 from "../assets/img/main02.png"
+import lottie from 'lottie-web';
 ---
 <div class="load">
   <div class="load__logo">
@@ -88,30 +89,45 @@ import main02 from "../assets/img/main02.png"
   document.addEventListener('DOMContentLoaded', function () {
     function end_loader() {
       const loader = document.querySelector('.load');
-      loader.style.transition = 'opacity 1s'; // フェードアウトの時間を1秒に設定
-      loader.style.opacity = '0'; // フェードアウト開始
+      
+      // loaderが存在する場合のみ処理を実行
+      if (loader) {
+        loader.style.transition = 'opacity 1s'; // フェードアウトの時間を1秒に設定
+        loader.style.opacity = '0'; // フェードアウト開始
 
-      setTimeout(function () {
-        loader.style.display = 'none'; // 完全に透明になったら非表示に
-      }, 1000); // 1秒後（フェードアウトが完了したら）に非表示に
+        setTimeout(function () {
+          loader.style.display = 'none'; // 完全に透明になったら非表示に
+        }, 1000); // 1秒後（フェードアウトが完了したら）に非表示に
+      } else {
+        console.error('Loader element ".load" not found.');
+      }
     }
 
     window.addEventListener('load', function () {
-      setTimeout(end_loader, 2000); // 3秒後にローディングを終了
+      setTimeout(end_loader, 2000); // 2秒後にローディングを終了
     });
   });
 </script>
+
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const swiper = new Swiper('.mySwiper', {
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
-    loop: true,
+  document.addEventListener('DOMContentLoaded', function() {
+    const swiperElement = document.querySelector('.mySwiper');
+
+    // swiperElementが存在するかチェック
+    if (swiperElement) {
+      const swiper = new Swiper('.mySwiper', {
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        loop: true,
+      });
+    } else {
+      console.error('Swiper element ".mySwiper" not found.');
+    }
   });
-});
 </script>
+
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {

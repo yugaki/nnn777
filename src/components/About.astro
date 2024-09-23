@@ -2,6 +2,7 @@
 import { Image } from "astro:assets"
 import item01 from "../assets/img/about/about01.png"
 import item02 from "../assets/img/about/about02.png"
+import lottie from 'lottie-web';
 ---
 
 <section class="about" id="sec01">
@@ -144,15 +145,25 @@ import item02 from "../assets/img/about/about02.png"
 
     // スクロールイベントをリッスンして逆方向のパララックス効果を適用
     window.addEventListener('scroll', function () {
-      const scrollTop = window.pageYOffset;
+      const scrollTop = window.scrollY;
 
       items.forEach(item => {
-        const speed = parseFloat(item.getAttribute('data-speed')) || 0.2; // data-speedを取得、デフォルト値は0.2
-        const direction = item.getAttribute('data-direction') === 'reverse' ? -1 : 1; // 逆方向の指定があれば-1、なければ1
-        const offset = scrollTop * speed * direction;
-        item.style.transform = `translateY(${offset}px)`; // Y軸方向に移動
+        // data-speed 属性の値を取得し、null チェック
+        const speedAttr = item.getAttribute('data-speed');
+        const speed = speedAttr ? parseFloat(speedAttr) : 0.2; // デフォルト値は0.2
+        
+        // data-direction 属性の値を取得し、null チェック
+        const directionAttr = item.getAttribute('data-direction');
+        const direction = directionAttr === 'reverse' ? -1 : 1; // 逆方向の指定があれば-1、なければ1
+
+        // アイテムの style プロパティが存在するかをチェックしてパララックス効果を適用
+        if (item && item.style) {
+          const offset = scrollTop * speed * direction;
+          item.style.transform = `translateY(${offset}px)`; // Y軸方向に移動
+        }
       });
     });
   });
 </script>
+
 
