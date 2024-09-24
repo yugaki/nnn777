@@ -147,22 +147,24 @@ import lottie from 'lottie-web';
       const scrollTop = window.scrollY;
 
       items.forEach(item => {
+        // item を HTMLElement としてキャスト
+        const element = item as HTMLElement;
+
         // data-speed 属性の値を取得し、null チェック
-        const speedAttr = item.getAttribute('data-speed');
+        const speedAttr = element.getAttribute('data-speed');
         const speed = speedAttr ? parseFloat(speedAttr) : 0.2; // デフォルト値は0.2
         
         // data-direction 属性の値を取得し、null チェック
-        const directionAttr = item.getAttribute('data-direction');
+        const directionAttr = element.getAttribute('data-direction');
         const direction = directionAttr === 'reverse' ? -1 : 1; // 逆方向の指定があれば-1、なければ1
 
         // アイテムの style プロパティが存在するかをチェックしてパララックス効果を適用
-        if (item && item.style) {
-          const offset = scrollTop * speed * direction;
-          item.style.transform = `translateY(${offset}px)`; // Y軸方向に移動
-        }
+        const offset = scrollTop * speed * direction;
+        element.style.transform = `translateY(${offset}px)`; // Y軸方向に移動
       });
     });
   });
 </script>
+
 
 
