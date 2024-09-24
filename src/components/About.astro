@@ -2,7 +2,7 @@
 import { Image } from "astro:assets"
 import item01 from "../assets/img/about/about01.png"
 import item02 from "../assets/img/about/about02.png"
-import lottie from 'astro-integration-lottie';
+import lottie from "lottie-web"
 ---
 
 <section class="about" id="sec01">
@@ -135,6 +135,7 @@ import lottie from 'astro-integration-lottie';
       autoplay: true,
       path: 'src/assets/json/data.json',
     });
+    logoAnimation.setSpeed(1);
   });
 </script>
 
@@ -142,29 +143,29 @@ import lottie from 'astro-integration-lottie';
   document.addEventListener('DOMContentLoaded', function () {
     const items = document.querySelectorAll('.item');
 
-    // スクロールイベントをリッスンして逆方向のパララックス効果を適用
     window.addEventListener('scroll', function () {
       const scrollTop = window.scrollY;
 
       items.forEach(item => {
-        // item を HTMLElement としてキャスト
-        const element = item as HTMLElement;
+        // item が HTMLElement であるかを確認
+        if (item instanceof HTMLElement) {
+          // data-speed 属性の値を取得し、null チェック
+          const speedAttr = item.getAttribute('data-speed');
+          const speed = speedAttr ? parseFloat(speedAttr) : 0.2; // デフォルト値は0.2
+          
+          // data-direction 属性の値を取得し、null チェック
+          const directionAttr = item.getAttribute('data-direction');
+          const direction = directionAttr === 'reverse' ? -1 : 1; // 逆方向の指定があれば-1、なければ1
 
-        // data-speed 属性の値を取得し、null チェック
-        const speedAttr = element.getAttribute('data-speed');
-        const speed = speedAttr ? parseFloat(speedAttr) : 0.2; // デフォルト値は0.2
-        
-        // data-direction 属性の値を取得し、null チェック
-        const directionAttr = element.getAttribute('data-direction');
-        const direction = directionAttr === 'reverse' ? -1 : 1; // 逆方向の指定があれば-1、なければ1
-
-        // アイテムの style プロパティが存在するかをチェックしてパララックス効果を適用
-        const offset = scrollTop * speed * direction;
-        element.style.transform = `translateY(${offset}px)`; // Y軸方向に移動
+          // パララックス効果を適用
+          const offset = scrollTop * speed * direction;
+          item.style.transform = `translateY(${offset}px)`; // Y軸方向に移動
+        }
       });
     });
   });
 </script>
+
 
 
 
