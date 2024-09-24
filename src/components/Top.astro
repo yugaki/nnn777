@@ -4,7 +4,8 @@ import deco from "../assets/img/top_deco.svg"
 import logo from "../assets/img/Logo.svg"
 import main01 from "../assets/img/main01.png"
 import main02 from "../assets/img/main02.png"
-import lottie from 'lottie-web';
+import lottie from 'astro-integration-lottie';
+import LottieAnimation from 'astro-integration-lottie/Lottie.astro';
 ---
 <div class="load">
   <div class="load__logo">
@@ -25,7 +26,9 @@ import lottie from 'lottie-web';
         </div>
       </div>
     </div>
-    <div class="lottie" id="logo"></div>
+    <div class="lottie" id="logo">
+      <!-- <LottieAnimation src="../assets/json/data.json" autoplay="visible" /> -->
+    </div>
     <div class="top__logo">
       <Image src={logo} alt="deco"></Image>
     </div>
@@ -109,27 +112,6 @@ import lottie from 'lottie-web';
     });
   });
 </script>
-
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const swiperElement = document.querySelector('.mySwiper');
-
-    // swiperElementが存在するかチェック
-    if (swiperElement) {
-      const swiper = new Swiper('.mySwiper', {
-        autoplay: {
-          delay: 3000,
-          disableOnInteraction: false,
-        },
-        loop: true,
-      });
-    } else {
-      console.error('Swiper element ".mySwiper" not found.');
-    }
-  });
-</script>
-
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
