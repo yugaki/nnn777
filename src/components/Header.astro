@@ -29,12 +29,20 @@ import unko from "../assets/img/Logo.svg"
     top: 0px;
     width: 100%;
     z-index: 100000;
+    @media (max-width: 765px) {
+      padding: 12px;
+      padding-bottom: 0;
+      padding-top: 12px;
+    }
     h1{
       width: 120px;
       transition: 0.3s;
       &:hover{
         scale: 0.9;
       }
+      @media (max-width: 765px) {
+        width: 80px;
+    }
     }
     .box{
       display: flex;
@@ -45,12 +53,19 @@ import unko from "../assets/img/Logo.svg"
       border-radius: 200px;
       background: #fff;
       box-shadow: 0px 2px 10px 0px rgba(204, 204, 204, 0.25);
+      @media (max-width: 765px) {
+      padding: 8px;
+      justify-content:center;
+    }
     }
     ul{
       display: flex;
       gap: 24px;
       align-items: center;
       justify-content: center;
+      @media (max-width: 765px) {
+        display: none;
+    }
     }
     li{
       transition: 0.3s;

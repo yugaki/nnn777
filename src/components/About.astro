@@ -2,13 +2,18 @@
 import { Image } from "astro:assets"
 import item01 from "../assets/img/about/about01.png"
 import item02 from "../assets/img/about/about02.png"
+import item03 from "../assets/img/about/about03.png"
+import item04 from "../assets/img/about/about04.png"
+import item05 from "../assets/img/about/about05.png"
+import item06 from "../assets/img/about/about06.png"
+import item07 from "../assets/img/about/about07.png"
 import lottie from "lottie-web"
 ---
 
 <section class="about" id="sec01">
   <div class="inner">
     <h2 class="tit_h2">ごあいさつ</h2>
-    <p class="txt"><br>みなさま、毎日の業務お疲れさまです。<br>みなさまの日々のがんばりによって、<br>こうして今年も社員旅行を決行することができました。<br>今年の目的地は<span class="big">「滋賀県の信楽」</span>です！<br>たくさんお仕事をがんばっているみなさまにとって、<br>少しでもこの旅行が癒しになればと、幹事一同心より願っております。<br>みなさまに楽しんでいただけると嬉しいです。
+    <p class="txt">みなさま、毎日の業務お疲れさまです。<br>みなさまの日々のがんばりによって、<br>こうして今年も社員旅行を決行することができました。<br>今年の目的地は<span class="big">「滋賀県の信楽」</span>です！<br>たくさんお仕事をがんばっているみなさまにとって、<br>少しでもこの旅行が癒しになればと、幹事一同心より願っております。<br>みなさまに楽しんでいただけると嬉しいです。
     </p>
   </div>
   <div class="lottie" id="lott"></div>
@@ -19,19 +24,19 @@ import lottie from "lottie-web"
     <Image src={item02} alt="deco"></Image>
   </div>
   <div class="item --no3" data-speed="0.4">
-    <Image src={item01} alt="deco"></Image>
+    <Image src={item03} alt="deco"></Image>
   </div>
   <div class="item --no4" data-speed="0.1" data-direction="reverse">
-    <Image src={item01} alt="deco"></Image>
+    <Image src={item04} alt="deco"></Image>
   </div>
   <div class="item --no5" data-speed="0.2" >
-    <Image src={item02} alt="deco"></Image>
+    <Image src={item05} alt="deco"></Image>
   </div>
   <div class="item --no6" data-speed="0.1" data-direction="reverse">
-    <Image src={item02} alt="deco"></Image>
+    <Image src={item06} alt="deco"></Image>
   </div>
   <div class="item --no7" data-speed="0.1">
-    <Image src={item01} alt="deco"></Image>
+    <Image src={item07} alt="deco"></Image>
   </div>
 </section>
 
@@ -42,6 +47,9 @@ import lottie from "lottie-web"
     padding-top: 160px;
     padding-bottom: 800px;
     // overflow-x: hidden;
+    @media (max-width: 765px) {
+      padding-top: 64px;
+    }
   }
   .inner {
     max-width: 1120px;
@@ -49,6 +57,9 @@ import lottie from "lottie-web"
     position: relative;
     z-index: 500;
     padding: 0 40px;
+    @media (max-width: 765px) {
+      padding: 0 24px;
+    }
   }
   .txt{
     font-family: "Zen Kaku Gothic New";
@@ -57,6 +68,14 @@ import lottie from "lottie-web"
     font-weight: 500;
     line-height: 270%; /* 40.5px */
     letter-spacing: 0.75px;
+    margin-top: 40px;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
+    @media (max-width: 765px) {
+      margin-top: 24px;
+      line-height: 240%; 
+      letter-spacing: 0.5px;
+      text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
+    }
   }
   .big{
     font-weight: 700;
@@ -74,12 +93,20 @@ import lottie from "lottie-web"
     overflow: hidden;
     position: absolute;
     transition: transform 0.1s ease-out;
+    @media (max-width: 765px) {
+      border-radius: 4px;
+    }
     &.--no1{
       right: 25%;
       // top: 450px;
       top: 230px;
       width: 400px;
       z-index: 20;
+      @media (max-width: 765px) {
+        right: 18%;
+        top: 380px;
+        width: 240px;
+      }
     }
     &.--no2{
       right: 8%;
@@ -87,13 +114,23 @@ import lottie from "lottie-web"
       top: 80px;
       width: 300px;
       z-index: 19;
+      @media (max-width: 765px) {
+        right: -5%;
+        top: 190px;
+        width: 180px;
+      }
     }
     &.--no3{
-      left: 5%;
+      left: 48%;
       // top: 575px;
       top: 350px;
       width: 450px;
       z-index: 20;
+      @media (max-width: 765px) {
+        left: 2%;
+        top: 350px;
+        width: 280px;
+      }
     }
     &.--no4{
       right: 35%;
@@ -101,27 +138,47 @@ import lottie from "lottie-web"
       top: 860px;
       width: 300px;
       z-index: 23;
+      @media (max-width: 765px) {
+        right: 55%;
+        top: 760px;
+        width: 200px;
+      }
     }
     &.--no5{
-      right: 50%;
+      right: 60%;
       // top: 930px;
-      top: 660px;
-      width: 280px;
+      top: 450px;
+      width: 350px;
       z-index: 22;
+      @media (max-width: 765px) {
+        right: 52%;
+        top: 810px;
+        width: 180px;
+      }
     }
     &.--no6{
-      right: -7%;
+      right: -2%;
       // top: 680px;
       top: 1000px;
-      width: 400px;
+      width: 340px;
       z-index: 26;
+      @media (max-width: 765px) {
+        right: 4%;
+        top: 900px;
+        width: 230px;
+      }
     }
     &.--no7{
       left: -5%;
       // top: 1050px;
-      top: 800px;
+      top: 700px;
       width: 400px;
       z-index: 19;
+      @media (max-width: 765px) {
+        left:52%;
+        top: 1020px;
+        width: 220px;
+      }
     }
   }
 </style>
