@@ -3,11 +3,9 @@ import { Image } from "astro:assets"
 import palarax from "../assets/img/paralax01.png"
 ---
 
-
 <div class="main-visual js-trigger">
-  <Image src={palarax} alt="unko" class="js-animation-section imgs"></Image>
+  <Image src={palarax} alt="パララックス画像" class="js-animation-section imgs"></Image>
 </div>
-
 
 <style lang="scss">
   .main-visual {
@@ -17,11 +15,23 @@ import palarax from "../assets/img/paralax01.png"
     height: 100vh;
     position: relative;
     overflow: hidden;
-    .main-image {
+
+    .imgs {
       width: 100%;
       height: 100%;
       object-fit: cover; 
       object-position: 50% 50%; 
+    }
+  }
+
+  // SP時のスタイル（横幅765px以下）
+  @media (max-width: 765px) {
+    .imgs {
+      width: auto;
+      height: 100vh; // 縦方向を画面いっぱいに
+      max-width: none; // 幅の制限を解除
+      object-fit: cover; 
+      object-position: 50% 50%; // 中央に配置
     }
   }
 </style>
@@ -34,16 +44,17 @@ import palarax from "../assets/img/paralax01.png"
   gsap.fromTo(
     ".js-animation-section",
     {
-      scale: 0.3, // 初期サイズ (100%)
+      scale: 0.4, // 初期サイズ（100%）
     },
     {
-      scale: 1, // 拡大サイズ (150%)
+      scale: 1.3, // 拡大サイズ（120%）
       scrollTrigger: {
         trigger: ".js-trigger",
         start: "center center",
         scrub: true,
         pin: true,
+        end: "bottom top", // スクロール位置の終点を指定
       },
-    },
+    }
   );
 </script>

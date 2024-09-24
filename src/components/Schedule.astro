@@ -197,6 +197,10 @@ import item01 from "../assets/img/sch/sch01.png"
   z-index: 500;
   padding: 0 40px;
   padding-top: 160px;
+  @media (max-width: 765px) {
+    padding: 0 24px;
+    padding-top: 100px;
+    }
   }
   .innerSch {
   max-width: 1120px;
@@ -205,6 +209,9 @@ import item01 from "../assets/img/sch/sch01.png"
   z-index: 500;
   padding: 0 40px;
   width: 500%; /* 横方向に広げる幅を調整 */
+  @media (max-width: 765px) {
+    padding: 0 24px;
+    }
   }
   .absol{
     position: absolute;
@@ -223,9 +230,19 @@ import item01 from "../assets/img/sch/sch01.png"
     border: 2px solid var(--mian01, #00D1B5);
     padding: 24px;
     width: 448px;
+    position:relative;
+    @media (max-width: 765px) {
+    max-width:350px;
+    width: 100%;
+    padding: 16px;
+    }
     &.--opa0{
       margin-right: 800px;
       opacity: 0;
+      @media (max-width: 765px) {
+        margin-right: 0px;
+        width: 100px;
+      }
     }
     &Time{
       display: flex;
@@ -283,6 +300,9 @@ import item01 from "../assets/img/sch/sch01.png"
       line-height: 120%; /* 19.2px */
       letter-spacing: 0.8px;
     }
+    @media (max-width: 765px) {
+      width: 140px;
+      }
   }
 </style>
 
