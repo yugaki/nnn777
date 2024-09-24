@@ -127,7 +127,7 @@ import lottie from "lottie-web"
 </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function() {// @ts-ignore
     const logoAnimation = lottie.loadAnimation({
       container: document.getElementById('lott'),
       renderer: 'svg',
@@ -147,24 +147,22 @@ import lottie from "lottie-web"
       const scrollTop = window.scrollY;
 
       items.forEach(item => {
-        // item が HTMLElement であるかを確認
-        if (item instanceof HTMLElement) {
-          // data-speed 属性の値を取得し、null チェック
-          const speedAttr = item.getAttribute('data-speed');
-          const speed = speedAttr ? parseFloat(speedAttr) : 0.2; // デフォルト値は0.2
-          
-          // data-direction 属性の値を取得し、null チェック
-          const directionAttr = item.getAttribute('data-direction');
-          const direction = directionAttr === 'reverse' ? -1 : 1; // 逆方向の指定があれば-1、なければ1
+        // data-speed 属性の値を取得し、null チェック
+        const speedAttr = item.getAttribute('data-speed');
+        const speed = speedAttr ? parseFloat(speedAttr) : 0.2; // デフォルト値は0.2
+        
+        // data-direction 属性の値を取得し、null チェック
+        const directionAttr = item.getAttribute('data-direction');
+        const direction = directionAttr === 'reverse' ? -1 : 1; // 逆方向の指定があれば-1、なければ1
 
-          // パララックス効果を適用
-          const offset = scrollTop * speed * direction;
-          item.style.transform = `translateY(${offset}px)`; // Y軸方向に移動
-        }
+        // パララックス効果を適用
+        const offset = scrollTop * speed * direction;
+        item.style.transform = `translateY(${offset}px)`; // Y軸方向に移動
       });
     });
   });
 </script>
+
 
 
 

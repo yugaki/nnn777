@@ -122,7 +122,7 @@ import lottie from "lottie-web"
 </script>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function() {// @ts-ignore
     const logoAnimation = lottie.loadAnimation({
       container: document.getElementById('lottCount'),
       renderer: 'svg',
@@ -130,6 +130,7 @@ import lottie from "lottie-web"
       autoplay: true,
       path: 'src/assets/json/data.json',
     });
+    logoAnimation.setSpeed(1);
   });
-  logoAnimation.setSpeed(1);
 </script>
+

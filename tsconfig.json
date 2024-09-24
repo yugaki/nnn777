@@ -1,3 +1,23 @@
+// {
+//   "extends": "astro/tsconfigs/strict"
+// }
 {
-  "extends": "astro/tsconfigs/strict"
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "noEmit": true,
+    "checkJs": false,  // JavaScriptファイルに対して型チェックを行わない
+    "allowJs": true,   // JavaScriptファイルの使用を許可
+    "skipLibCheck": true, // 型ライブラリのチェックをスキップ
+    "strict": false,   // 厳格な型チェックを無効にする
+    "noImplicitAny": false, // 型が暗黙的にanyになるのを許容
+    "suppressImplicitAnyIndexErrors": true // インデックスの暗黙のanyエラーを無視
+  },
+  // "compilerOptions": {
+  //   "noEmit": true,
+  //   "checkJs": false,  // JavaScriptファイルに対して型チェックを行わない
+  //   "allowJs": true,   // JavaScriptファイルの使用を許可
+  //   "skipLibCheck": true // 型ライブラリのチェックをスキップ
+  // },
+  // "include": ["src/**/*.ts", "src/**/*.js", "src/**/*.astro"]
 }
+

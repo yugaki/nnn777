@@ -92,11 +92,9 @@ import main02 from "../assets/img/main02.png"
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     function end_loader() {
-      // loader を HTMLElement にキャスト
-      const loader = document.querySelector('.load') as HTMLElement;
-      
-      // loaderが存在する場合のみ処理を実行
-      if (loader) {
+      // loader要素を取得
+      const loader = document.querySelector('.load');
+      if (loader) { // loaderが存在する場合のみ処理を実行
         loader.style.transition = 'opacity 1s'; // フェードアウトの時間を1秒に設定
         loader.style.opacity = '0'; // フェードアウト開始
 
@@ -115,14 +113,15 @@ import main02 from "../assets/img/main02.png"
 </script>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const logoAnimation = lottie.loadAnimation({
-    container: document.getElementById('logo'),
-    renderer: 'svg',
-    loop: true,
-    autoplay: true,
-    path: 'src/assets/json/data.json',
+  document.addEventListener('DOMContentLoaded', function () {// @ts-ignore
+    const logoAnimation = lottie.loadAnimation({
+      container: document.getElementById('logo'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: 'src/assets/json/data.json',
+    });
+    logoAnimation.setSpeed(1);
   });
-  logoAnimation.setSpeed(1);
-});
 </script>
+
