@@ -1,0 +1,40 @@
+---
+import { Image } from "astro:assets"
+import item01 from "../assets/img/map/map.png"
+---
+
+<section class="map" id="map">
+  <div class="inner">
+    <h2 class="tit_h2">全体マップ</h2>
+    <div class="mapBox">
+      <Image src={item01} alt="deco"></Image>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  .map{
+    padding-top: 80px;
+    padding-bottom: 120px;
+    @media (max-width: 765px) {
+      padding-top: 0px;
+      padding-bottom: 80px;
+  }    
+  }
+  .inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 500;
+  padding: 0 40px;
+  @media (max-width: 765px) {
+    padding: 0 24px;
+  }
+  }
+  .mapBox{
+    margin-top:40px;
+    border-radius:40px;
+    overflow: hidden;
+  }
+</style>
+

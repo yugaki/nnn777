@@ -7,6 +7,12 @@ import item04 from "../assets/img/about/about04.png"
 import item05 from "../assets/img/about/about05.png"
 import item06 from "../assets/img/about/about06.png"
 import item07 from "../assets/img/about/about07.png"
+import add02 from "../assets/img/about/item_kama.svg"
+import add03 from "../assets/img/about/item_muse.svg"
+import add04 from "../assets/img/about/item_nin.svg"
+import add05 from "../assets/img/about/item_pand.svg"
+import add06 from "../assets/img/about/item_tanu.svg"
+import add07 from "../assets/img/about/item_yu.svg"
 import lottie from "lottie-web"
 ---
 
@@ -37,6 +43,24 @@ import lottie from "lottie-web"
   </div>
   <div class="item --no7" data-speed="0.1">
     <Image src={item07} alt="deco"></Image>
+  </div>
+  <div class="item --add2" data-speed="0.4 data-direction="reverse">
+    <Image src={add02} alt="deco"></Image>
+  </div>
+  <div class="item --add3" data-speed="0.3">
+    <Image src={add03} alt="deco"></Image>
+  </div>
+  <div class="item --add4" data-speed="0.1" data-direction="reverse">
+    <Image src={add04} alt="deco"></Image>
+  </div>
+  <div class="item --add5" data-speed="0.3" >
+    <Image src={add05} alt="deco"></Image>
+  </div>
+  <div class="item --add6" data-speed="0.2" data-direction="reverse">
+    <Image src={add06} alt="deco"></Image>
+  </div>
+  <div class="item --add7" data-speed="0.3">
+    <Image src={add07} alt="deco"></Image>
   </div>
 </section>
 
@@ -185,6 +209,72 @@ import lottie from "lottie-web"
         width: 220px;
       }
     }
+    &.--add2{
+      left: 20%;
+      top: 780px;
+      width: 207px;
+      z-index: 30;
+      @media (max-width: 765px) {
+        left:52%;
+        top: 1020px;
+        width: 220px;
+      }
+    }
+    &.--add3{
+      left: 43%;
+      top: 600px;
+      width: 310px;
+      z-index: 30;
+      @media (max-width: 765px) {
+        left:52%;
+        top: 1020px;
+        width: 220px;
+      }
+    }
+    &.--add4{
+      left: 17%;
+      top: 780px;
+      width: 120px;
+      z-index: 30;
+      @media (max-width: 765px) {
+        left:52%;
+        top: 1020px;
+        width: 220px;
+      }
+    }
+    &.--add5{
+      right: 25%;
+      top: 120px;
+      width: 120px;
+      z-index: 30;
+      @media (max-width: 765px) {
+        right: 20%;
+        top: 1020px;
+        width: 220px;
+      }
+    }    
+    &.--add6{
+      right: 15%;
+      top: 1620px;
+      width: 160px;
+      z-index: 30;
+      @media (max-width: 765px) {
+        right:52%;
+        top: 1020px;
+        width: 220px;
+      }
+    }    
+    &.--add7{
+      left: 10%;
+      top: 750px;
+      width: 180px;
+      z-index: 30;
+      @media (max-width: 765px) {
+        left:52%;
+        top: 1020px;
+        width: 220px;
+      }
+    }    
   }
 </style>
 

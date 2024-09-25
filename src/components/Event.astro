@@ -1,9 +1,39 @@
 ---
-// import { Image } from "astro:assets"
-// import item01 from "../assets/img/sch/sch01.png"
+import { Image } from "astro:assets"
+import sun from "../assets/img/event/sun.svg"
+import moon from "../assets/img/event/moon.svg"
+import cl01 from "../assets/img/event/cl1.svg"
+import cl02 from "../assets/img/event/cl2.svg"
+import star from "../assets/img/event/ster.svg"
 ---
 
 <div class="eventWave">
+  <div class="sun">
+    <Image src={sun} alt="deco"></Image>
+  </div>
+  <div class="moon">
+    <Image src={moon} alt="deco"></Image>
+  </div>
+  <div class="star --s1">
+    <Image src={star} alt="deco"></Image>
+  </div>
+  <div class="star --s2">
+    <Image src={star} alt="deco"></Image>
+  </div>
+  <div class="star --s3">
+    <Image src={star} alt="deco"></Image>
+  </div>
+  <div class="star --s4">
+    <Image src={star} alt="deco"></Image>
+  </div> 
+  <div class="cl01">
+    <Image src={cl01} alt="deco"></Image>
+  </div>
+  <div class="cl02">
+    <Image src={cl02} alt="deco"></Image>
+  </div>
+  <!-- <div class="sky">
+  </div> -->
   <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" /></defs>
       <g class="parallax">
           <use xlink:href="#gentle-wave" x="48" y="0" fill="#5B705D" />
@@ -35,8 +65,194 @@
 </section>
 
 <style lang="scss">
+  .sky{
+    position:absolute;
+  }
+  .sun{
+      position:absolute;
+      left:15%;
+      width:80px;
+      top: 10%;
+      animation: sunMove 20s ease-in-out infinite;
+      @keyframes sunMove {
+        0% {
+          transform: translateY(0); 
+        }
+        50% {
+          transform: translateY(300px); 
+        }
+        100% {
+          transform: translateY(0); 
+        }
+      }
+    }
+    .moon{
+      position:absolute;
+      right:15%;
+      width:80px;
+      top: 10%;
+      animation: Moon 20s ease-in-out infinite;
+      @keyframes Moon {
+        0% {
+          transform: translateY(300px); 
+        }
+        50% {
+          transform: translateY(0); 
+        }
+        100% {
+          transform: translateY(300px); 
+        }
+      }
+    }
+    .star{
+      position:absolute;
+      width:40px;
+      &.--s1{
+        left:10%;
+        top: 20%;
+        animation: star1 20s infinite;
+        @keyframes star1 {
+          0% {
+            opacity: 0;
+          }
+          40% {
+            opacity: 0;
+          }
+          42% {
+            opacity: 0.8;
+          }
+          45% {
+            opacity: 0;
+          }
+          50% {
+            opacity: 1;
+          }
+          53% {
+            opacity: 0;
+          }
+          55% {
+            opacity: 1;
+          }
+          57% {
+            opacity: 0;
+          }
+          60% {
+            opacity: 0.8;
+          }
+          62% {
+            opacity: 0;
+          }
+          100% {
+            opacity: 0;
+          }
+        }
+      }
+      &.--s2{
+        left:40%;
+        top: 30%;
+        animation: star2 20s infinite;
+        @keyframes star2 {
+          0% {
+            opacity: 0;
+          }
+          40% {
+            opacity: 0;
+          }
+          42% {
+            opacity: 0.8;
+          }
+          46% {
+            opacity: 0;
+          }
+          48% {
+            opacity: 1;
+          }
+          51% {
+            opacity: 0;
+          }
+          53% {
+            opacity: 1;
+          }
+          56% {
+            opacity: 0;
+          }
+          62% {
+            opacity: 0.8;
+          }
+          64% {
+            opacity: 0;
+          }
+          100% {
+            opacity: 0;
+          }
+        }
+      }
+      &.--s3{
+        left:65%;
+        top: 13%;
+        animation: star1 20s infinite;
+      }
+      &.--s4{
+        left:80%;
+        top: 35%;
+        animation: star2 20s infinite;
+      }
+    }
+    .cl01{
+      position:absolute;
+      left:20%;
+      width:100px;
+      top: 20%;
+      animation: cl01 20s ease-in-out infinite;
+      @keyframes cl01 {
+        0% {
+          transform: translateX(0); 
+        }
+        50% {
+          transform: translateX(100%); 
+        }
+        100% {
+          transform: translateX(0); 
+        }
+      }
+    }
+    .cl02{
+      position:absolute;
+      left:55%;
+      width:160px;
+      top: 16%;
+      animation: cl02 20s ease-in-out infinite;
+      @keyframes cl02 {
+        0% {
+          transform: translateX(0); 
+        }
+        50% {
+          transform: translateX(180%); 
+        }
+        100% {
+          transform: translateX(0); 
+        }
+      }
+    }
   .eventWave{
     position: relative;
+    background:#000;
+    height:300px;
+    display: flex;
+    align-items: end;
+    overflow: hidden;
+    animation: bgChange 20s ease-in-out infinite;
+      @keyframes bgChange {
+        0% {
+          background:#E2F7FA;
+        }
+        50% {
+          background:#333;
+        }
+        100% {
+          background:#E2F7FA;
+        }
+      }
 			.waves {
 				position:relative;
 				width: 100%;
