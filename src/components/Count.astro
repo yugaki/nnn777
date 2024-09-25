@@ -30,8 +30,8 @@ import lottie from "lottie-web"
 
 <style lang="scss">
   .count{
-    padding-top: 240px;
-    padding-bottom: 240px;
+    padding-top: 200px;
+    padding-bottom: 200px;
     overflow: hidden;
     position: relative;
     @media (max-width: 765px) {
@@ -46,7 +46,10 @@ import lottie from "lottie-web"
     top: 0;
     opacity: 0.3;
     position: absolute;
-    scale: 1.5;
+    scale:1;
+    @media (max-width: 765px) {
+      scale: 1.5;
+  }
   }
   .inner {
   max-width: 1120px;
