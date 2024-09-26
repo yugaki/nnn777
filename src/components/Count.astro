@@ -5,7 +5,7 @@ import lottie from "lottie-web"
 
 <section class="count" id="sec04">
   <div class="inner">
-    <h2 class="tit_h2">社員旅行まで残り...</h2>
+    <h2 class="titCount">社員旅行まで残り...</h2>
     <div class="countBody">
       <div class="dates days">
         <div class="timesNum">05</div>
@@ -61,13 +61,29 @@ import lottie from "lottie-web"
     padding: 0 24px;
   }
   }
+  .titCount{
+    font-family: "Zen Kaku Gothic New";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 3.2px;
+    gap: 12px;
+    text-align:center;
+    @media (max-width: 765px) {
+      font-size: 30px;
+    }
+  }
   .countBody{
     display: flex;
     gap: 24px;
     justify-content: center;
-    margin-top: 120px;
+    margin-top: 40px;
     position: relative;
     z-index: 100;
+    padding: 80px;
+    background:#F2EEEF;
+    border-radius:16px;
     @media (max-width: 765px) {
       margin-top: 40px;
       gap: 16px;
@@ -85,6 +101,12 @@ import lottie from "lottie-web"
     font-weight: 700;
     line-height: 120%; /* 48px */
     letter-spacing: 2px;
+    width:60px;
+    height:60px;
+    border-radius:8px;
+    display: grid;
+    place-items:center;
+    background:#fff;
   }
   .timesDay{
     font-family: "Zen Kaku Gothic New";
