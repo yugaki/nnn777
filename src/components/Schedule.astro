@@ -11,6 +11,12 @@ import item08 from "../assets/img/sch/sch_08.png"
 import item09 from "../assets/img/sch/sch_09.png"
 import item10 from "../assets/img/sch/sch_010.png"
 import item11 from "../assets/img/sch/sch_011.png"
+import add02 from "../assets/img/about/item_kama.svg"
+import add03 from "../assets/img/about/item_muse.svg"
+import add04 from "../assets/img/about/item_nin.svg"
+import add05 from "../assets/img/about/item_pand.svg"
+import add06 from "../assets/img/about/item_tanu.svg"
+import add07 from "../assets/img/about/item_yu.svg"
 ---
 
 <section class="sch" id="sec02">
@@ -46,6 +52,9 @@ import item11 from "../assets/img/sch/sch_011.png"
           <div class="timeBoxImg">
             <Image src={item03} alt="deco"></Image>
           </div>
+          <div class="decos --add6">
+            <Image src={add06} alt="deco"></Image>
+          </div>
         </li>
         <li class="line">
           <p class="line_txt">徒歩<br>2min</p>
@@ -76,6 +85,9 @@ import item11 from "../assets/img/sch/sch_011.png"
           <div class="timeBoxImg">
             <Image src={item07} alt="deco"></Image>
           </div>
+          <div class="decos --add4">
+            <Image src={add04} alt="deco"></Image>
+          </div>
         </li>
         <li class="line">
           <p class="line_txt">タクシー<br>5min</p>
@@ -90,6 +102,9 @@ import item11 from "../assets/img/sch/sch_011.png"
           </div>
           <div class="timeBoxImg">
             <Image src={item02} alt="deco"></Image>
+          </div>
+          <div class="decos --add7">
+            <Image src={add07} alt="deco"></Image>
           </div>
         </li>
         <li class="line">
@@ -121,6 +136,9 @@ import item11 from "../assets/img/sch/sch_011.png"
           <div class="timeBoxImg">
             <Image src={item09} alt="deco"></Image>
           </div>
+          <div class="decos --add5">
+            <Image src={add05} alt="deco"></Image>
+          </div>
         </li>
         <li class="line">
           <p class="line_txt">体験終了</p>
@@ -136,6 +154,9 @@ import item11 from "../assets/img/sch/sch_011.png"
           <div class="timeBoxImg">
             <Image src={item04} alt="deco"></Image>
           </div>
+          <div class="decos --add3">
+            <Image src={add03} alt="deco"></Image>
+          </div>
         </li>
         <li class="line">
           <p class="line_txt">散策散歩<br>30min</p>
@@ -150,6 +171,9 @@ import item11 from "../assets/img/sch/sch_011.png"
           </div>
           <div class="timeBoxImg">
             <Image src={item06} alt="deco"></Image>
+          </div>
+          <div class="decos --add2">
+            <Image src={add02} alt="deco"></Image>
           </div>
         </li>
         <li class="line">
@@ -196,6 +220,32 @@ import item11 from "../assets/img/sch/sch_011.png"
     overflow: hidden; 
     height: 100vh;
     background:#F2EEEF;
+    position: relative;
+    &::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				// ノイズ背景を透過30%で設定
+				background: url('/img/Bg_noise01.png') repeat;
+				background-size: 300px 300px;
+				opacity: 0.3;  // 透過率を適用
+				background-blend-mode: soft-light;
+				pointer-events: none;
+				z-index: 1;
+			}
+      &::after {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				height: 250px;
+				background: linear-gradient(0deg, #FFF 0%, rgba(255, 255, 255, 0.00) 100%);
+				z-index: 20;
+			}
   }
   .horizontal-wrapper {
     width: 100vw;
@@ -211,6 +261,39 @@ import item11 from "../assets/img/sch/sch_011.png"
   @media (max-width: 765px) {
     padding: 0 24px;
     padding-top: 100px;
+    }
+  }
+  .decos{
+    position:absolute;
+    &.--add2{
+      top:-15px;
+      right:-20px;
+      width:140px;
+    }
+    &.--add3{
+      top:10px;
+      right:-10px;
+      width:180px;
+    }
+    &.--add4{
+      top:-10px;
+      right:-10px;
+      width:110px;
+    }
+    &.--add5{
+      top:-30px;
+      right:-10px;
+      width:110px;
+    }
+    &.--add6{
+      top:-25px;
+      right:-10px;
+      width:120px;
+    }
+    &.--add7{
+      top:-25px;
+      right:-10px;
+      width:120px;
     }
   }
   .innerSch {
@@ -238,7 +321,7 @@ import item11 from "../assets/img/sch/sch_011.png"
   }
   .timeBox{
     border-radius: 16px;
-    // border: 2px solid var(--mian01, #00D1B5);
+    // border: 2px solid var(--mian01, #669F95);
     padding: 32px;
     width: 448px;
     position:relative;
@@ -272,7 +355,7 @@ import item11 from "../assets/img/sch/sch_011.png"
         display: grid;
         place-items: center;
         border-radius: 50px;
-        background: var(--mian01, #00D1B5);
+        background: var(--mian01, #669F95);
       }
       .num{
         font-family: "Zen Kaku Gothic New";
