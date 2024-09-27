@@ -7,6 +7,7 @@ import cl02 from "../assets/img/event/cl2.svg"
 import star from "../assets/img/event/ster.svg"
 import panda from "../assets/img/event/pandaburabura.svg"
 import panda2 from "../assets/img/event/panda2.svg"
+import sld01 from "../assets/img/event/nagasaki01.png"
 ---
 
 <div class="eventWave">
@@ -55,22 +56,68 @@ import panda2 from "../assets/img/event/panda2.svg"
 <section class="event" id="sec03">
   <div class="inner">
     <h2 class="tit_h2 --ch">イベント</h2>
-    <div class="eventBox">
-      <div class="eventtxt"></div>
-      <div class="eventImg"></div>
-    </div>
-    <div class="formLink">
-      <!-- <a href="" class="btnItem">
-        投稿フォームはこちら
-      </a> -->
-      <p class="btnItem">
-        投稿フォーム準備中...
-      </p>
+    <div class="eventWrap">
+      <h2 class="tit_h2inner">しがらきフォトコンテスト！</h2>
+      <div class="eventBox">
+        <div class="eventtxt">
+          コンテスト概要を記入します。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。コンテスト概要を記入します。この文章はダミーです。文字の大きさ、
+        </div>
+        <div class="eventImg">
+          <Image src={sld01} alt="deco"></Image>
+        </div>
+      </div>
+      <div class="formLink">
+        <!-- <a href="" class="btnItem">
+          投稿フォームはこちら
+        </a> -->
+        <p class="btnItem">
+          投稿フォーム準備中...
+        </p>
+      </div>
     </div>
   </div>
 </section>
 
 <style lang="scss">
+  .eventWrap{
+    margin-top:40px;
+    background:#fff;
+    border-radius:24px;
+    padding:40px;
+    @media (max-width: 765px) {
+      padding:24px 16px;
+      }
+  }
+  .eventBox{
+    display:flex;
+    gap:24px;
+    margin-top:24px;
+    @media (max-width: 765px) {
+      flex-direction:column;
+      }
+  }
+  .eventImg{
+    width:360px;
+    border-radius:8px;
+    overflow:hidden;
+    flex-shrink:0;
+    @media (max-width: 765px) {
+      width:100%;
+      }
+  }
+  .tit_h2inner{
+    color: var(--Bk, #333);
+    font-family: "Zen Kaku Gothic New";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 36px */
+    letter-spacing: 1.5px;
+    text-align:center;
+    @media (max-width: 765px) {
+      font-size: 28px;
+      }    
+  }
   .sky{
     position:absolute;
   }
@@ -365,6 +412,9 @@ import panda2 from "../assets/img/event/panda2.svg"
     display: flex;
     justify-content: center;
     margin-top: 64px;
+    @media (max-width: 765px) {
+      margin-top: 24px;
+      }
   }
   .btnItem{
     width: 400px;
@@ -374,9 +424,9 @@ import panda2 from "../assets/img/event/panda2.svg"
     font-style: normal;
     font-weight: 700;
     line-height: 100%; 
-    background: #fff;
+    background: #669F95;
     border-radius: 8px;
-    color: var(--mian01, #669F95);
+    color: var(--mian01, #fff);
     transition: 0.3s;
     text-align: center;
     &:hover{
@@ -384,5 +434,18 @@ import panda2 from "../assets/img/event/panda2.svg"
       background: #D9D9D9;
     }
   }
+  .swiper-container {
+  width: 100%;
+  height: 300px; /* スライダーの高さを調整 */
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #f3f3f3; /* スライドの背景色 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 </style>
 
