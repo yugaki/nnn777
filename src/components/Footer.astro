@@ -1,10 +1,35 @@
 ---
 import { Image } from "astro:assets"
 import unko from "../assets/img/Logo.svg"
+import panda4 from "../assets/img/panda4.svg"
+import onpu2 from "../assets/img/onpu2.svg"
+import onpu1 from "../assets/img/onpu1.svg"
 // import fTimg from "../assets/img/footer.png"
 ---
-<div class="ftImg js-parallax">
+<div class="ftImg">
   <!-- <Image src={fTimg} alt=""></Image> -->
+    <svg class="waves2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" /></defs>
+      <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" fill="#566E8C" />
+          <use xlink:href="#gentle-wave" x="48" y="3" fill="#6994AF" />
+          <use xlink:href="#gentle-wave" x="48" y="6" fill="#81BACE" />
+          <use xlink:href="#gentle-wave" x="48" y="8" fill="#9FE2EB" />
+      </g>
+  </svg>
+  <svg class="waves2 --singl" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" /></defs>
+    <g class="parallax">
+        <use xlink:href="#gentle-wave" x="48" y="8" fill="#9FE2EB" />
+    </g>
+</svg>
+  <div class="panda4">
+    <Image src={panda4} alt="deco"></Image>
+  </div>
+  <div class="onpu2">
+    <Image src={onpu2} alt="deco"></Image>
+  </div>
+  <div class="onpu1">
+    <Image src={onpu1} alt="deco"></Image>
+  </div>
 </div>
 <footer>
   <div class="foot">
@@ -15,24 +40,163 @@ import unko from "../assets/img/Logo.svg"
 <style lang="scss">
   .ftImg{
     width: 100%;
-    height: 300px;
-    overflow: hidden;
-    background-image: url("/img/footer.png"); /* 背景画像として設定 */
-    background-size: cover; /* 画像を全体に表示 */
-    background-position: center center; /* 初期位置を設定 */
+    height: 250px;
+    // overflow: hidden;
+    position:relative;
+    display: flex;
+    align-items: end;
+    // background-image: url("/img/footer.png"); /* 背景画像として設定 */
+    // background-size: cover; /* 画像を全体に表示 */
+    // background-position: center center; /* 初期位置を設定 */
     @media (max-width: 765px) {
       height: 150px;
+    }
   }
+  .panda4{
+    position:absolute;
+    width: 150px;
+    bottom:0px;
+    left:14%;
+    z-index:2000;
+    animation: move-panda 3s ease-in-out infinite;
+    @keyframes move-panda {
+      0% {
+      transform: translateY(0px);
+      }
+      50% {
+      transform: translateY(-30px);
+      }
+      100% { 
+        transform: translateY(0px);
+      }
+    }
+    @media (max-width: 765px) {
+      width: 110px;
+      bottom:-10px;
+      left:10%;
+    }
   }
+  .onpu1{
+    position:absolute;
+    width: 24px;
+    bottom:200px;
+    left:25%;
+    z-index:2000;
+    animation: moveonpu1 4s ease-in-out infinite;
+    @keyframes moveonpu1 {
+    0% {
+      transform: translate(0px, 0px);
+      opacity: 0;
+    }
+    30% {
+      opacity: 1;
+    }
+    60% {
+      transform: translate(20px, -60px);
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+    @media (max-width: 765px) {
+      width: 20px;
+      bottom:110px;
+      left:34%;
+    }
+  } 
+  .onpu2{
+    position:absolute;
+    width: 24px;
+    bottom:200px;
+    left:15%;
+    z-index:2000;
+    animation: moveonpu 4s ease-in-out infinite;
+    @keyframes moveonpu {
+    0% {
+      transform: translate(0px, 0px);
+      opacity: 0;
+    }
+    30% {
+      transform: translate(0px, 0px);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    70% {
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-20px, -60px);
+      opacity: 0;
+    }
+  }
+    @media (max-width: 765px) {
+      width: 20px;
+      bottom:110px;
+      left:6%;
+    }
+  }
+  .waves2 {
+				position:relative;
+				width: 100%;
+				// margin-bottom:-12px; 
+				max-height:160px;
+				/* Animation */
+				.parallax > use {
+					animation: move-forever 30s cubic-bezier(.55,.5,.45,.5) infinite;
+				}
+				.parallax > use:nth-child(1) {
+					animation-delay: 0s;
+					animation-duration: 8s;
+				}
+				.parallax > use:nth-child(2) {
+					animation-delay: -5s;
+					animation-duration: 16s;
+				}
+				.parallax > use:nth-child(3) {
+					animation-delay: -10s;
+					animation-duration: 24s;
+				}
+				.parallax > use:nth-child(4) {
+					animation-delay: -15s;
+					animation-duration: 32s;
+				}
+				@keyframes move-forever {
+					0% {
+					transform: translate3d(-90px,0,0);
+					}
+					100% { 
+						transform: translate3d(85px,0,0);
+					}
+				}
+        &.--singl{
+          z-index:5000;
+          position:absolute;
+          .parallax > use {
+					animation: move-forever 30s cubic-bezier(.55,.5,.45,.5) infinite;
+				}
+				.parallax > use:nth-child(1) {
+					animation-delay: -15s;
+					animation-duration: 32s;
+				}
+        }
+			}
   footer{
     padding: 40px;
     background: #fff;
     display: grid;
     place-items: center;
+    position: relative;
     width: 100%;
+    z-index: 5000;
   }
   .foot{
     width: 200px;
+    @media (max-width: 765px) {
+      width: 100px;
+    }
   }
 </style>
 

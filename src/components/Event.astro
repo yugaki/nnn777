@@ -8,6 +8,10 @@ import star from "../assets/img/event/ster.svg"
 import panda from "../assets/img/event/pandaburabura.svg"
 import panda2 from "../assets/img/event/panda2.svg"
 import sld01 from "../assets/img/event/nagasaki01.png"
+import panda3 from "../assets/img/panda3.svg"
+import tanuki1 from "../assets/img/tanuki1.svg"
+import bgL from "../assets/img/event/bgL.svg"
+import bgR from "../assets/img/event/bgR.svg"
 ---
 
 <div class="eventWave">
@@ -54,13 +58,33 @@ import sld01 from "../assets/img/event/nagasaki01.png"
   </figure> -->
 </div>
 <section class="event" id="sec03">
+  <div class="panda3">
+    <Image src={panda3} alt="deco"></Image>
+  </div>
+  <div class="tanuki1">
+    <Image src={tanuki1} alt="deco"></Image>
+  </div>
+  <!-- <div class="wapitem">
+    <div class="testItem">
+      <h2 class="tit_h2">イベント</h2>
+      <h2 class="tit_h2inner">しがらきフォトコンテスト！</h2>
+      <div class="eventtxt itemTest">
+        「しがらきフォトコンテスト」は、社員旅行中に撮影された写真を対象としたフォトコンテストです。<br>お一人につき、最大で5枚まで応募いただけます。<br>応募いただいた写真は全員で投票を行い、上位に選ばれた方には素敵な景品が贈られるかもしれません！<br>この機会に、皆さんの写真の腕前をぜひ披露してくださいね！
+      </div>
+      <div class="formLink">
+        <p class="btnItem">
+          投稿フォーム準備中...
+        </p>
+      </div>
+    </div>
+  </div> -->
   <div class="inner">
     <h2 class="tit_h2 --ch">イベント</h2>
     <div class="eventWrap">
-      <h2 class="tit_h2inner">しがらきフォトコンテスト！</h2>
+      <h2 class="tit_h2inner">しがらき<br class="spOnly">フォトコンテスト！</h2>
       <div class="eventBox">
         <div class="eventtxt">
-          コンテスト概要を記入します。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。コンテスト概要を記入します。この文章はダミーです。文字の大きさ、
+          「しがらきフォトコンテスト」は、社員旅行中に撮影された写真を対象としたフォトコンテストです。<br>お一人につき、最大で5枚まで応募いただけます。<br>応募いただいた写真は全員で投票を行い、上位に選ばれた方には素敵な景品が贈られるかもしれません！<br>この機会に、皆さんの写真の腕前をぜひ披露してくださいね！
         </div>
         <div class="eventImg">
           <Image src={sld01} alt="deco"></Image>
@@ -79,6 +103,12 @@ import sld01 from "../assets/img/event/nagasaki01.png"
 </section>
 
 <style lang="scss">
+  .spOnly{
+    display:none;
+    @media (max-width: 765px) {
+      display:block;
+      }
+  }
   .eventWrap{
     margin-top:40px;
     background:#fff;
@@ -87,6 +117,9 @@ import sld01 from "../assets/img/event/nagasaki01.png"
     @media (max-width: 765px) {
       padding:24px 16px;
       }
+  }
+  .eventtxt{
+    line-height: 240%; /* 40.5px */
   }
   .eventBox{
     display:flex;
@@ -383,6 +416,30 @@ import sld01 from "../assets/img/event/nagasaki01.png"
 			}
       @media (max-width: 765px) {
         height:380px;
+    }
+  }
+  .panda3{
+    position:absolute;
+    width: 220px;
+    bottom:100px;
+    left:5%;
+    z-index:2000;
+    @media (max-width: 765px) {
+      width: 140px;
+      bottom:10px;
+      left:3%;
+    }
+  }
+  .tanuki1{
+    position:absolute;
+    width: 160px;
+    top:60px;
+    right:7%;
+    z-index:2000;
+    @media (max-width: 765px) {
+      width: 120px;
+      top:40px;
+      right:3%;
     }
   }
   .event{
