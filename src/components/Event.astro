@@ -64,21 +64,32 @@ import bgR from "../assets/img/event/bgR.svg"
   <div class="tanuki1">
     <Image src={tanuki1} alt="deco"></Image>
   </div>
-  <!-- <div class="wapitem">
-    <div class="testItem">
-      <h2 class="tit_h2">イベント</h2>
-      <h2 class="tit_h2inner">しがらきフォトコンテスト！</h2>
-      <div class="eventtxt itemTest">
-        「しがらきフォトコンテスト」は、社員旅行中に撮影された写真を対象としたフォトコンテストです。<br>お一人につき、最大で5枚まで応募いただけます。<br>応募いただいた写真は全員で投票を行い、上位に選ばれた方には素敵な景品が贈られるかもしれません！<br>この機会に、皆さんの写真の腕前をぜひ披露してくださいね！
+  <div class="inner --spNone">
+    <div class="bgL">
+      <Image src={bgL} alt="deco"></Image>
+    </div>
+    <div class="bgR">
+      <Image src={bgR} alt="deco"></Image>
+    </div>
+    <div class="wapitem">
+      <div class="testItem">
+        <h2 class="tit_h2">イベント</h2>
+        <h2 class="tit_h2inner --tes">しがらきフォトコンテスト！</h2>
+        <div class="eventtxt itemTest">
+          「しがらきフォトコンテスト」は、社員旅行中に撮影された写真を対象としたフォトコンテストです。<br>お一人につき、最大で5枚まで応募いただけます。<br>応募いただいた写真は全員で投票を行い、上位に選ばれた方には素敵な景品が贈られるかもしれません！<br>この機会に、皆さんの写真の腕前をぜひ披露してくださいね！
+        </div>
+        <div class="formLink --test">
+          <p class="btnItem">
+            投稿フォーム準備中...
+          </p>
+        </div>
       </div>
-      <div class="formLink">
-        <p class="btnItem">
-          投稿フォーム準備中...
-        </p>
+      <div class="eventImg">
+        <Image src={sld01} alt="deco"></Image>
       </div>
     </div>
-  </div> -->
-  <div class="inner">
+  </div>
+  <div class="inner --pcNone">
     <h2 class="tit_h2 --ch">イベント</h2>
     <div class="eventWrap">
       <h2 class="tit_h2inner">しがらき<br class="spOnly">フォトコンテスト！</h2>
@@ -108,6 +119,33 @@ import bgR from "../assets/img/event/bgR.svg"
     @media (max-width: 765px) {
       display:block;
       }
+  }
+  .bgL{
+    position:absolute;
+    left:-150px;
+    width:890px;
+    top: -30%;
+    z-index:10;
+  }
+  .bgR{
+    position:absolute;
+    right:-105px;
+    width:670px;
+    top: 0%;
+    z-index:10;
+  }
+  .wapitem{
+    position:relative;
+    z-index:30;
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    @media (max-width: 765px) {
+      display:block;
+    }
+  }
+  .testItem{
+    max-width:500px;
   }
   .eventWrap{
     margin-top:40px;
@@ -149,7 +187,12 @@ import bgR from "../assets/img/event/bgR.svg"
     text-align:center;
     @media (max-width: 765px) {
       font-size: 28px;
-      }    
+      }
+    &.--tes{
+      text-align:left;
+      margin-top:40px;
+      margin-bottom:16px;
+    }    
   }
   .sky{
     position:absolute;
@@ -421,7 +464,7 @@ import bgR from "../assets/img/event/bgR.svg"
   .panda3{
     position:absolute;
     width: 220px;
-    bottom:100px;
+    bottom:50px;
     left:5%;
     z-index:2000;
     @media (max-width: 765px) {
@@ -443,7 +486,7 @@ import bgR from "../assets/img/event/bgR.svg"
     }
   }
   .event{
-    padding-top: 80px;
+    padding-top: 200px;
     padding-bottom: 200px;
     overflow: hidden;
     position: relative;
@@ -464,6 +507,18 @@ import bgR from "../assets/img/event/bgR.svg"
   @media (max-width: 765px) {
     padding: 0 24px;
   }
+  &.--spNone{
+    display:block;
+    @media (max-width: 765px) {
+      display:none;
+  }
+  }
+  &.--pcNone{
+    display:none;
+    @media (max-width: 765px) {
+      display:block;
+  }
+  }
   }
   .formLink{
     display: flex;
@@ -471,6 +526,10 @@ import bgR from "../assets/img/event/bgR.svg"
     margin-top: 64px;
     @media (max-width: 765px) {
       margin-top: 24px;
+      }
+      &.--test{
+        margin-top: 24px;
+        justify-content: start;
       }
   }
   .btnItem{
