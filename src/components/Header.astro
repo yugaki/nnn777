@@ -1,6 +1,8 @@
 ---
 import { Image } from "astro:assets"
 import unko from "../assets/img/Logo.svg"
+import marisa from "../assets/img/marisa.png"
+import rem from "../assets/img/rem.png"
 ---
 <header>
   <div class="box">
@@ -21,7 +23,40 @@ import unko from "../assets/img/Logo.svg"
   </div>
 </header>
 
+<!-- <div class="kaisetu">
+  <div class="rem">
+    <Image src={marisa} alt="Logo"></Image>
+  </div>
+  <div class="marisa">
+    <Image src={rem} alt="Logo"></Image>
+  </div>
+</div> -->
+
 <style lang="scss">
+  .kaisetu{
+    padding: 40px;
+    padding-bottom: 24px;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    z-index: 100000;
+    @media (max-width: 765px) {
+      padding: 12px;
+      padding-bottom: 10px;
+    }
+  }
+  .rem{
+    left: 40px;
+    bottom: 40px;
+    width: 240px;
+    position: absolute;
+  }
+  .marisa{
+    right: 40px;
+    bottom: 40px;
+    width: 240px;
+    position: absolute;
+  }
   header{
     padding: 40px;
     padding-top: 24px;
